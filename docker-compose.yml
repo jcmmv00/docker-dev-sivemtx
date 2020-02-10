@@ -3,10 +3,7 @@ services:
     server-dev:
         image: jboss7sivemtx:latest
         ports:
-            - "8089:8080"
-            - "9090:9090"
-            - "9990:9990"
-            - "9999:9999"
+            - "9080:9080"
             - "8787:8787"
         volumes:
             - server-target:/opt/jboss-eap-7.0/standalone/deployments/
@@ -17,6 +14,7 @@ services:
         stdin_open: true
         entrypoint:
             - bash
+            
         volumes:
             - source-files:/usr/mysources/
             - mavenm2:/root/.m2/
